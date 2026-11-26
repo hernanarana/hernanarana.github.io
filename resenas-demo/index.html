@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reseñas PRO · Demo para El Fuelle, pizzería</title>
+<meta name="description" content="Demo de Reseñas PRO, el sistema de LuSan PRO para que los clientes de un negocio dejen su reseña en Google, se muestren en la web y el dueño las responda.">
+<meta property="og:title" content="Reseñas PRO · Demo">
+<meta property="og:description" content="Más reseñas reales en Google para tu negocio: QR, pedido después de la venta, muro en tu web y panel para responder.">
+<meta property="og:image" content="https://hernanarana.github.io/resenas-demo/og.jpg">
+<meta name="theme-color" content="#c8102e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f1a17; --tomato:#c8102e; --tomato-d:#9b0c23; --mustard:#f4b400; --basil:#2e6b3f;
+  --paper:#ffffff; --flour:#f5f1ea; --line:#e4ddd1; --muted:#5f574f;
+  --slab:'Alfa Slab One', Rockwell, 'Roboto Slab', Georgia, serif;
+  --sans:'Work Sans', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scrollbar-color:var(--tomato) var(--flour);caret-color:var(--tomato)}
+::selection{background:var(--mustard);color:var(--ink)}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--flour);font-size:16px;line-height:1.5}
+a{color:var(--tomato);text-underline-offset:3px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* franja de la demo */
+.demo{background:var(--ink);color:#f5f1ea;font-size:14px}
+.demo .wrap{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;padding-top:9px;padding-bottom:9px}
+.demo b{color:var(--mustard);font-weight:600}
+.demo a{color:#fff}
+
+/* cabecera del negocio */
+.biz{background:var(--tomato);color:#fff;border-bottom:6px solid var(--mustard)}
+.biz .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
+.logo{font-family:var(--slab);font-size:34px;line-height:1;letter-spacing:.5px}
+.logo small{display:block;font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:0;margin-top:6px;opacity:.9}
+.score{display:flex;align-items:baseline;gap:10px}
+.score strong{font-family:var(--slab);font-size:40px;line-height:1}
+.score span{font-size:14px;opacity:.95}
+
+/* pestañas */
+.tabs{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}
+.tab{flex:0 0 auto;border:0;background:none;padding:12px 16px;border-radius:999px;font-weight:600;color:var(--muted);min-height:44px}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]:hover{color:#fff}
+
+section[role=tabpanel]{padding:40px 0 64px}
+section[hidden]{display:none}
+h1,h2{font-family:var(--slab);font-weight:400;line-height:1.1;margin:0 0 10px;letter-spacing:.2px}
+h2{font-size:34px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 28px;max-width:38em}
+
+/* 1. dejar reseña */
+.phone{max-width:420px;margin:0 auto;background:var(--paper);border-radius:22px;border:1px solid var(--line);padding:28px 24px;box-shadow:0 18px 40px -24px rgba(31,26,23,.45)}
+.phone h1{font-size:30px;margin-bottom:6px}
+.phone p{margin:0 0 18px;color:var(--muted)}
+.stars{display:flex;gap:6px;margin:6px 0 6px}
+.star{width:56px;height:56px;border:0;background:none;padding:0;border-radius:12px;display:grid;place-items:center}
+.star svg{width:46px;height:46px;transition:transform .15s ease}
+.star svg path{fill:#e7e0d4;transition:fill .15s ease}
+.star.on svg path{fill:var(--mustard);stroke:#c99300;stroke-width:1}
+.star:active svg{transform:scale(.9)}
+.rate-label{min-height:24px;font-weight:600;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font-weight:500;min-height:44px}
+.chip[aria-pressed="true"]{border-color:var(--basil);background:#e8f1ea;color:var(--basil)}
+label.small{display:block;font-weight:600;font-size:15px;margin:4px 0 6px}
+textarea{width:100%;min-height:96px;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;resize:vertical}
+textarea:focus{outline:none;border-color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:14px 18px;font-weight:700;min-height:50px;transition:transform .1s ease, background .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--tomato);color:#fff;width:100%}
+.btn-main:hover{background:var(--tomato-d)}
+.btn-main[disabled]{background:#d9cfc3;color:#7a7068;cursor:not-allowed}
+.btn-line{background:none;border:1.5px solid var(--ink);color:var(--ink);width:100%;margin-top:10px}
+.btn-line:hover{background:var(--flour)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.done{text-align:center;padding:12px 0}
+.done h1{font-size:30px}
+
+/* 2. muro */
+.wall-head{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:24px}
+.summary{display:flex;gap:20px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.summary strong{font-family:var(--slab);font-size:48px;line-height:1}
+.bars{display:grid;gap:4px;font-size:13px;color:var(--muted);min-width:180px}
+.bar{display:grid;grid-template-columns:14px 1fr 30px;gap:8px;align-items:center}
+.bar i{display:block;height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.bar i b{display:block;height:100%;background:var(--mustard)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.grid{columns:3 300px;column-gap:20px}
+.card{break-inside:avoid;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 20px}
+.card .who{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;flex:0 0 auto}
+.card .name{font-weight:700}
+.card .when{font-size:13px;color:var(--muted)}
+.mini{display:flex;gap:2px;margin-bottom:8px}
+.mini svg{width:18px;height:18px}
+.card p{margin:0}
+.reply{margin-top:14px;padding:12px 14px;background:var(--flour);border-radius:12px;font-size:15px}
+.reply b{display:block;font-size:13px;color:var(--tomato);margin-bottom:2px}
+.embed{margin-top:8px;font-size:14px;color:var(--muted)}
+
+/* 3. QR */
+.qr-layout{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.tent{flex:0 0 auto;width:320px;background:var(--tomato);color:#fff;border-radius:18px;padding:28px 26px 24px;text-align:center;box-shadow:0 22px 40px -22px rgba(155,12,35,.7);border-bottom:10px solid var(--mustard)}
+.tent .t1{font-family:var(--slab);font-size:32px;line-height:1.05;margin-bottom:16px}
+.tent .qr{background:#fff;border-radius:14px;padding:14px;display:inline-block}
+.tent .qr img{display:block;width:190px;height:190px;image-rendering:pixelated}
+.tent .t2{margin-top:14px;font-weight:600}
+.tent .t3{margin-top:8px;font-family:var(--slab);font-size:18px;opacity:.95}
+.qr-text{flex:1 1 320px;min-width:0}
+.qr-text ol{padding-left:20px;margin:0 0 22px}
+.qr-text li{margin-bottom:8px}
+.copybox{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:15px;margin-bottom:12px}
+
+/* 4. panel */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-bottom:28px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.kpi strong{display:block;font-family:var(--slab);font-size:36px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:14px}
+.kpi.alert strong{color:var(--tomato)}
+.todo{display:grid;gap:16px}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px}
+.item.ok{opacity:.6}
+.tpls{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 10px}
+.tpl{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-weight:500;font-size:14px;min-height:40px}
+.tpl:hover{border-color:var(--ink)}
+.item .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.item .row .btn{width:auto}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#3a322c}
+.ok-msg{color:var(--basil);font-weight:600;margin-top:8px}
+
+footer{background:var(--ink);color:#d9d2c6;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+footer a{color:var(--mustard);font-weight:600}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;transition:all .25s ease;pointer-events:none;max-width:92vw;text-align:center;z-index:20}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:640px){
+  .logo{font-size:28px}
+  .score strong{font-size:32px}
+  h2{font-size:27px}
+  .lead{font-size:16px}
+  section[role=tabpanel]{padding:28px 0 48px}
+  .phone{padding:22px 18px;border-radius:18px}
+  .star{width:50px;height:50px}.star svg{width:42px;height:42px}
+  .tent{width:100%}
+  .summary strong{font-size:40px}
+}
+@media print{
+  body{background:#fff}
+  .demo,.biz,.tabs,footer,.qr-text,.toast{display:none!important}
+  section[role=tabpanel]{display:none!important}
+  #p-qr{display:block!important;padding:0}
+  .tent{box-shadow:none;margin:0 auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="demo"><div class="wrap">
+<span><b>Demo de Reseñas PRO.</b> El Fuelle es un negocio inventado y las reseñas son de ejemplo.</span>
+<a href="https://hernanarana.github.io/">Un servicio de LuSan PRO</a>
+</div></div>
+
+<header class="biz"><div class="wrap">
+<div class="logo">El Fuelle<small>Pizzería a la piedra · Lanús</small></div>
+<div class="score" aria-label="Promedio de ejemplo"><strong id="avgTop">4,7</strong><span><span id="countTop">8</span> reseñas de ejemplo</span></div>
+</div></header>
+
+<nav class="tabs" aria-label="Partes de la demo"><div class="wrap" role="tablist">
+<button class="tab" role="tab" id="t-opinar" aria-controls="p-opinar" aria-selected="true">Dejar reseña</button>
+<button class="tab" role="tab" id="t-muro" aria-controls="p-muro" aria-selected="false">Muro para la web</button>
+<button class="tab" role="tab" id="t-qr" aria-controls="p-qr" aria-selected="false">QR del mostrador</button>
+<button class="tab" role="tab" id="t-panel" aria-controls="p-panel" aria-selected="false">Panel del dueño</button>
+</div></nav>
+
+<main>
+<!-- 1. lo que ve el cliente al escanear el QR -->
+<section id="p-opinar" role="tabpanel" aria-labelledby="t-opinar"><div class="wrap">
+<div class="phone" id="form">
+<h1>¿Qué tal la pizza?</h1>
+<p>Tu opinión ayuda a otros vecinos a elegir. Te lleva 20 segundos.</p>
+<div class="stars" role="radiogroup" aria-label="Puntaje de 1 a 5" id="stars"></div>
+<div class="rate-label" id="rateLabel" aria-live="polite"></div>
+<label class="small" id="chipsLabel">Lo que más te gustó</label>
+<div class="chips" role="group" aria-labelledby="chipsLabel" id="chips"></div>
+<label class="small" for="txt">Contanos algo más <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+<textarea id="txt" placeholder="Ej.: la fugazzeta, la atención de Marta…"></textarea>
+<div style="margin-top:16px">
+<button class="btn btn-main" id="goGoogle" disabled>Publicar en Google</button>
+<button class="btn btn-line" id="goOwner">Mandar solo al dueño</button>
+</div>
+<p class="note">Todas las opiniones pueden publicarse en Google, sean buenas o malas. Si preferís, mandala en privado al dueño.</p>
+</div>
+<div class="phone done" id="thanks" hidden>
+<h1>¡Gracias!</h1>
+<p id="thanksText"></p>
+<button class="btn btn-line" id="again">Ver la demo de nuevo</button>
+</div>
+</div></section>
+
+<!-- 2. muro que se pega en la web del negocio -->
+<section id="p-muro" role="tabpanel" aria-labelledby="t-muro" hidden><div class="wrap">
+<div class="wall-head">
+<div>
+<h2>Lo que dicen los vecinos</h2>
+<p class="lead" style="margin-bottom:0">Este bloque va en la web del negocio y muestra sus reseñas de Google, con las respuestas del dueño.</p>
+</div>
+<div class="summary">
+<strong id="avgWall">4,7</strong>
+<div class="bars" id="bars"></div>
+</div>
+</div>
+<div class="filters" style="margin-bottom:20px" role="group" aria-label="Filtrar reseñas" id="wallFilters"></div>
+<div class="grid" id="wall"></div>
+<p class="embed">En la versión real se actualiza solo con las reseñas de Google del negocio.</p>
+</div></section>
+
+<!-- 3. QR para imprimir -->
+<section id="p-qr" role="tabpanel" aria-labelledby="t-qr" hidden><div class="wrap">
+<div class="qr-layout">
+<div class="tent">
+<div class="t1">¿Te gustó? Contalo.</div>
+<div class="qr"><img src="data:image/png;base64,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" alt="Código QR para dejar una reseña de El Fuelle"></div>
+<div class="t2">Escaneá con la cámara y dejá tu reseña en 20 segundos</div>
+<div class="t3">El Fuelle · Lanús</div>
+</div>
+<div class="qr-text">
+<h2>Un QR en cada mesa</h2>
+<p class="lead">El cartelito va en el mostrador, las mesas, el ticket y la caja de la pizza. El cliente lo escanea y cae directo en la pantalla para opinar.</p>
+<ol>
+<li>Se imprime en tamaño mesa o en sticker para la caja.</li>
+<li>El mismo link va en la bio de Instagram y en WhatsApp.</li>
+<li>Escaneá este QR con tu celular para probar la demo.</li>
+</ol>
+<button class="btn btn-ink" id="print" style="width:auto">Imprimir el cartel</button>
+</div>
+</div>
+</div></section>
+
+<!-- 4. panel del dueño -->
+<section id="p-panel" role="tabpanel" aria-labelledby="t-panel" hidden><div class="wrap">
+<h2>Panel del dueño</h2>
+<p class="lead">Cómo viene el mes, qué reseñas faltan responder y el mensaje para pedir opiniones después de cada pedido.</p>
+<div class="kpis">
+<div class="kpi"><strong id="kAvg">4,7</strong><span>Promedio del mes</span></div>
+<div class="kpi"><strong id="kNew">8</strong><span>Reseñas nuevas</span></div>
+<div class="kpi alert"><strong id="kPend">2</strong><span>Sin responder</span></div>
+<div class="kpi"><strong id="kPriv">0</strong><span>Mensajes privados</span></div>
+</div>
+<h2 style="font-size:24px">Para responder hoy</h2>
+<div class="todo" id="todo"></div>
+<h2 style="font-size:24px;margin-top:36px">Mensaje después del pedido</h2>
+<p class="lead" style="margin-bottom:14px">Sale por WhatsApp una hora después de la entrega. En la versión real se manda solo.</p>
+<div class="copybox" id="waMsg">¡Hola! Gracias por pedir en El Fuelle 🍕 ¿Nos contás qué te pareció? Te lleva 20 segundos: hernanarana.github.io/resenas-demo</div>
+<button class="btn btn-ink" id="copyWa" style="width:auto">Copiar mensaje</button>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<span>Reseñas PRO: más reseñas reales en Google para tu negocio.</span>
+<a href="https://hernanarana.github.io/#contacto">Lo quiero para mi negocio</a>
+</div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const STAR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.3l-5.8 3.1 1.2-6.5L2.6 9.4l6.5-.8z"/></svg>';
+const LABELS=['','Mala','Floja','Bien','Muy buena','¡Excelente!'];
+const CHIPS=['La masa','La muzza','La atención','Llegó caliente','El precio','La demora'];
+const COLORS=['#c8102e','#2e6b3f','#1f1a17','#b07d00','#5b3e8a','#0f6e7a'];
+const reviews=[
+ {n:'Lucía M.',r:5,d:'hace 2 días',t:'La fugazzeta rellena es de otro planeta. Llegó caliente y antes de lo que dijeron.',rep:'¡Gracias, Lucía! La fugazzeta es la estrella de la casa. Te esperamos.'},
+ {n:'Ramiro G.',r:5,d:'hace 3 días',t:'Masa finita y crocante como tiene que ser. Fuimos un martes y nos atendieron re bien.',rep:'¡Gracias, Ramiro! Los martes de muzza los esperamos de nuevo.'},
+ {n:'Carla P.',r:4,d:'hace 5 días',t:'Muy rica la napolitana. El sábado tardó un poco más, pero avisaron.',rep:null},
+ {n:'Jorge S.',r:5,d:'hace 1 semana',t:'De las mejores pizzas de Lanús. El fainá también vale la pena.',rep:'¡Mil gracias, Jorge! El fainá sale todas las noches.'},
+ {n:'Vale R.',r:3,d:'hace 1 semana',t:'Rica, pero la pedí bien cocida y vino a punto.',rep:null},
+ {n:'Martín D.',r:5,d:'hace 2 semanas',t:'Pedimos para el cumple y quedaron todos contentos. Buen precio por porción.',rep:'¡Gracias, Martín! Feliz cumple atrasado.'},
+ {n:'Sofía L.',r:5,d:'hace 2 semanas',t:'La atención de la chica de la caja, un diez. Volvemos seguro.',rep:'¡Gracias, Sofía! Se lo pasamos a Marta.'},
+ {n:'Nico F.',r:5,d:'hace 3 semanas',t:'Muzza con mucho queso y la masa al punto. Recomendada.',rep:'¡Gracias, Nico!'}
+];
+let rating=0, picked=new Set(), privates=0, wallFilter='Todas';
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toFixed(1).replace('.',',');
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2600);}
+
+// pestañas
+const tabs=[...document.querySelectorAll('.tab')];
+function show(id){tabs.forEach(b=>{const on=b.id==='t-'+id;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;$('p-'+b.id.slice(2)).hidden=!on;});history.replaceState(null,'','#'+id);}
+tabs.forEach((b,i)=>{b.addEventListener('click',()=>show(b.id.slice(2)));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();show(n.id.slice(2));}});});
+
+// 1. estrellas y chips
+const stars=$('stars');
+for(let i=1;i<=5;i++){const b=document.createElement('button');b.className='star';b.type='button';b.setAttribute('role','radio');b.setAttribute('aria-checked','false');b.setAttribute('aria-label',i+(i===1?' estrella':' estrellas'));b.innerHTML=STAR;b.addEventListener('click',()=>setRating(i));stars.appendChild(b);}
+function setRating(v){rating=v;[...stars.children].forEach((b,k)=>{b.classList.toggle('on',k<v);b.setAttribute('aria-checked',k===v-1);});$('rateLabel').textContent=LABELS[v];$('goGoogle').disabled=false;$('chipsLabel').textContent=v>=4?'Lo que más te gustó':'Qué podemos mejorar';}
+CHIPS.forEach(c=>{const b=document.createElement('button');b.className='chip';b.type='button';b.textContent=c;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{picked.has(c)?picked.delete(c):picked.add(c);b.setAttribute('aria-pressed',picked.has(c));});$('chips').appendChild(b);});
+function finish(msg){$('form').hidden=true;$('thanks').hidden=false;$('thanksText').textContent=msg;}
+$('goGoogle').addEventListener('click',()=>{
+  const txt=$('txt').value.trim()||[...picked].join(', ')||'¡Muy rica!';
+  reviews.unshift({n:'Vos (demo)',r:rating,d:'recién',t:txt,rep:null});
+  renderAll();
+  finish('En la versión real, ahora se abre Google con tu reseña lista para publicar. En esta demo la sumamos al muro y al panel del dueño para que veas cómo llega.');
+});
+$('goOwner').addEventListener('click',()=>{privates++;renderAll();finish('Tu mensaje le llegó solo al dueño. Siempre podés publicar también en Google.');});
+$('again').addEventListener('click',()=>{rating=0;picked.clear();$('txt').value='';[...stars.children].forEach(b=>{b.classList.remove('on');b.setAttribute('aria-checked','false')});document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));$('rateLabel').textContent='';$('goGoogle').disabled=true;$('form').hidden=false;$('thanks').hidden=true;});
+
+// 2. muro
+function mini(r){let s='';for(let i=1;i<=5;i++)s+=STAR.replace('<path','<path fill="'+(i<=r?'#f4b400':'#e7e0d4')+'"');return '<div class="mini" aria-label="'+r+' de 5 estrellas">'+s+'</div>';}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+['Todas','5 estrellas','Con respuesta'].forEach(f=>{const b=document.createElement('button');b.className='chip';b.type='button';b.textContent=f;b.addEventListener('click',()=>{wallFilter=f;renderWall();});$('wallFilters').appendChild(b);});
+function renderWall(){
+  document.querySelectorAll('#wallFilters .chip').forEach(b=>b.setAttribute('aria-pressed',b.textContent===wallFilter));
+  const list=reviews.filter(r=>wallFilter==='Todas'||(wallFilter==='5 estrellas'&&r.r===5)||(wallFilter==='Con respuesta'&&r.rep));
+  $('wall').innerHTML=list.map((r,i)=>'<article class="card"><div class="who"><div class="av" style="background:'+COLORS[i%COLORS.length]+'">'+esc(r.n[0])+'</div><div><div class="name">'+esc(r.n)+'</div><div class="when">'+r.d+' · Google</div></div></div>'+mini(r.r)+'<p>'+esc(r.t)+'</p>'+(r.rep?'<div class="reply"><b>Respuesta de El Fuelle</b>'+esc(r.rep)+'</div>':'')+'</article>').join('');
+  const c=[0,0,0,0,0,0];reviews.forEach(r=>c[r.r]++);
+  $('bars').innerHTML=[5,4,3,2,1].map(k=>'<div class="bar"><span>'+k+'</span><i><b style="width:'+(100*c[k]/reviews.length)+'%"></b></i><span>'+c[k]+'</span></div>').join('');
+}
+
+// 4. panel
+const TPL={'Agradecer':n=>'¡Gracias, '+n+'! Nos alegra mucho que te haya gustado. Te esperamos de nuevo en El Fuelle.','Pedir disculpas':n=>'Hola, '+n+'. Gracias por avisarnos y perdón por lo que pasó. Ya lo hablamos con la cocina. Escribinos por WhatsApp y la próxima corre por nuestra cuenta.','Invitar a volver':n=>'¡Gracias por elegirnos, '+n+'! Los martes tenemos 2x1 en muzza. ¡Te esperamos!'};
+function renderPanel(){
+  const pend=reviews.filter(r=>!r.rep);
+  $('todo').innerHTML=pend.length?pend.map((r)=>{const i=reviews.indexOf(r);return '<div class="item" data-i="'+i+'"><div class="who" style="display:flex;gap:12px;align-items:center"><div class="av" style="background:var(--ink)">'+esc(r.n[0])+'</div><div><b>'+esc(r.n)+'</b><div class="when" style="font-size:13px;color:var(--muted)">'+r.d+'</div></div></div>'+mini(r.r)+'<p style="margin:0">'+esc(r.t)+'</p><div class="tpls">'+Object.keys(TPL).map(k=>'<button class="tpl" type="button" data-k="'+k+'">'+k+'</button>').join('')+'</div><label class="small" for="ans'+i+'">Tu respuesta</label><textarea id="ans'+i+'"></textarea><div class="row"><button class="btn btn-ink" type="button" data-send>Publicar respuesta</button></div></div>';}).join(''):'<p class="ok-msg">Respondiste todas las reseñas. ¡Bien ahí!</p>';
+}
+$('todo').addEventListener('click',e=>{
+  const it=e.target.closest('.item');if(!it)return;const r=reviews[+it.dataset.i];const first=r.n.split(' ')[0];
+  if(e.target.dataset.k){it.querySelector('textarea').value=TPL[e.target.dataset.k](first);it.querySelector('textarea').focus();}
+  if(e.target.hasAttribute('data-send')){const v=it.querySelector('textarea').value.trim();if(!v){toast('Escribí la respuesta o elegí una plantilla.');return;}r.rep=v;renderAll();toast('Respuesta publicada. Ya se ve en el muro.');}
+});
+$('copyWa').addEventListener('click',()=>{const t=$('waMsg').textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Mensaje copiado.'),()=>toast('Mantené apretado el texto para copiarlo.'));});
+$('print').addEventListener('click',()=>window.print());
+
+function renderAll(){
+  const avg=reviews.reduce((a,r)=>a+r.r,0)/reviews.length;
+  ['avgTop','avgWall','kAvg'].forEach(id=>$(id).textContent=fmt(avg));
+  $('countTop').textContent=reviews.length;$('kNew').textContent=reviews.length;
+  $('kPend').textContent=reviews.filter(r=>!r.rep).length;$('kPriv').textContent=privates;
+  renderWall();renderPanel();
+}
+renderAll();
+const start=(location.hash||'#opinar').slice(1);
+show(['opinar','muro','qr','panel'].includes(start)?start:'opinar');
+</script>
+</body>
+</html>
