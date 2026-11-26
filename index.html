@@ -247,7 +247,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 <div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
 <div style="flex: 1 1 420px; min-width: 0">
 <h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 16px; color: #ffffff">¿Por qué LuSan PRO?</h2>
-<p class="ls-lead" style="margin: 0; font-size: 18px; line-height: 1.7; color: #d1fae5; max-width: 34em">Soy Hernán Arana. Desde 2023 hago webs, tiendas y redes para emprendimientos y empresas. Me formé como desarrollador Full Stack en Coderhouse, hoy curso Data Science y uso Excel y Power BI todos los días.</p>
+<p class="ls-lead" style="margin: 0; font-size: 18px; line-height: 1.7; color: #d1fae5; max-width: 34em">Soy Hernán Arana. Desde 2023 hago webs, tiendas y redes para emprendimientos y empresas. Soy desarrollador Full Stack, me especializo en Data Science y uso Excel y Power BI todos los días.</p>
 </div>
 <ul class="ls-list" style="flex: 1 1 380px; min-width: 0; gap: 16px; font-size: 18px; line-height: 1.5; color: #ffffff">
 <li>Un solo contacto para tu web, tus redes y tus números.</li>
@@ -354,7 +354,7 @@ function data(){ return (function(){
       toggleMenu: () => setState({ menuOpen: !menuOpen }),
       closeMenu: () => setState({ menuOpen: false }),
       q, projects, cats, rain, empty: projects.length === 0,
-      emptyMsg: (cat === 'Datos' && !q) ? 'Estoy cursando Data Science en Coderhouse: muy pronto vas a ver acá más proyectos de datos.' : 'No hay proyectos con esa búsqueda. Probá con otra palabra.',
+      emptyMsg: (cat === 'Datos' && !q) ? 'Muy pronto vas a ver acá más proyectos de datos.' : 'No hay proyectos con esa búsqueda. Probá con otra palabra.',
       onSearch: (e) => setState({ q: e.target.value }),
       techLoop: (() => {
         const t = [
