@@ -1,0 +1,34 @@
+codigo,familia,material,precio_unitario,proveedor,lead_time_dias,stock_actual
+MAT-1000,Rodamientos,Rodamiento 6205,13840.0,Proveedor D,12,11
+MAT-1001,Rodamientos,Rodamiento 6308,11390.0,Proveedor F,20,88
+MAT-1002,Rodamientos,Rodamiento cónico 32210,23290.0,Proveedor A,10,68
+MAT-1003,Rodamientos,Rodamiento de rodillos NU210,3450.0,Proveedor D,12,470
+MAT-1004,Filtros,Filtro de aceite,37980.0,Proveedor C,25,49
+MAT-1005,Filtros,Filtro de aire,15580.0,Proveedor A,10,75
+MAT-1006,Filtros,Filtro de combustible,4040.0,Proveedor B,15,155
+MAT-1007,Filtros,Filtro hidráulico,20240.0,Proveedor B,15,63
+MAT-1008,Frenos,Zapata de freno,4760.0,Proveedor D,12,803
+MAT-1009,Frenos,Pastilla de freno,20890.0,Proveedor A,10,14
+MAT-1010,Frenos,Disco de freno,6960.0,Proveedor C,25,236
+MAT-1011,Frenos,Válvula de freno,28710.0,Proveedor E,30,2
+MAT-1012,Eléctrico,Contactor 40A,21640.0,Proveedor B,15,231
+MAT-1013,Eléctrico,Relé 24V,2430.0,Proveedor C,25,135
+MAT-1014,Eléctrico,Fusible 63A,21150.0,Proveedor C,25,41
+MAT-1015,Eléctrico,Cable 4mm (rollo),4780.0,Proveedor E,30,289
+MAT-1016,Eléctrico,Lámpara LED,5910.0,Proveedor A,10,681
+MAT-1017,Lubricantes,Aceite 15W40 (20L),6210.0,Proveedor C,25,113
+MAT-1018,Lubricantes,Grasa EP2 (18kg),3300.0,Proveedor B,15,1309
+MAT-1019,Lubricantes,Aceite hidráulico (20L),22280.0,Proveedor E,30,26
+MAT-1020,Ferretería,Bulón M16,24940.0,Proveedor C,25,1
+MAT-1021,Ferretería,Tuerca M16,10710.0,Proveedor F,20,685
+MAT-1022,Ferretería,Arandela M16,7610.0,Proveedor B,15,298
+MAT-1023,Ferretería,"Abrazadera 2""",14660.0,Proveedor B,15,588
+MAT-1024,Ferretería,Junta tórica,6450.0,Proveedor C,25,14
+MAT-1025,Seguridad,Guantes de trabajo,13970.0,Proveedor C,25,568
+MAT-1026,Seguridad,Casco,3330.0,Proveedor F,20,38
+MAT-1027,Seguridad,Anteojos de seguridad,8480.0,Proveedor C,25,181
+MAT-1028,Seguridad,Chaleco reflectivo,1570.0,Proveedor F,20,52
+MAT-1029,Neumática,Electroválvula,29170.0,Proveedor E,30,15
+MAT-1030,Neumática,Manguera neumática,102880.0,Proveedor D,12,54
+MAT-1031,Neumática,Cilindro neumático,8330.0,Proveedor B,15,337
+MAT-1032,Neumática,Racor rápido,2570.0,Proveedor B,15,114

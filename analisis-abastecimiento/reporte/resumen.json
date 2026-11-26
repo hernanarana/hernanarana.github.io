@@ -1,0 +1,15 @@
+{
+  "materiales": 33,
+  "semanas": 104,
+  "pedidos": 791,
+  "clase_a": 14,
+  "pct_valor_a": 0.7875900677721421,
+  "error_promedio_movil": 0.16213662099696127,
+  "error_regresion": 0.11440956381737398,
+  "criticos": 2,
+  "pedir_ya": 14,
+  "peor_proveedor": "Proveedor E",
+  "peor_a_tiempo": 0.04,
+  "mejor_proveedor": "Proveedor A",
+  "mejor_a_tiempo": 0.9074074074074074
+}

@@ -226,6 +226,7 @@ input:focus{outline:2px solid #059669;outline-offset:1px}
 <li><strong>Código prolijo y documentado</strong>, fácil de mantener.</li>
 <li><strong>Uso de IA</strong> para acelerar análisis y desarrollo.</li>
 <li><strong>Todo en un lugar:</strong> datos, software, web y redes con la misma mirada.</li>
+<li><strong>Idiomas:</strong> español nativo e inglés intermedio (documentación técnica y reuniones).</li>
 </ul>
 </div>
 </section>
@@ -298,6 +299,7 @@ function data(){ return (function(){
       { t: 'Tilia', code: 'agenda.tsx', cats: ['Desarrollo web', 'Marketing y redes'], d: 'Plataforma para psicólogos y terapeutas: agenda con turnos recurrentes, fichas clínicas cifradas, reservas online, recordatorios por WhatsApp, cobros con Mercado Pago y estadísticas. Diseño, desarrollo y marketing.', tags: 'React · Vite · Mercado Pago · WhatsApp', web: 'https://www.somostilia.com/', img: 'img/tilia.jpg' },
       { t: 'Kondor Parfums', code: 'shopify', cats: ['Desarrollo web', 'Marketing y redes'], d: 'Tienda online de perfumes árabes y de diseñador: tema propio en Shopify, campañas como Black Friday, packs, club de clientes, cupón de bienvenida, WhatsApp e Instagram.', tags: 'Shopify · Mercado Pago · Instagram', web: 'https://kondorparfums.com/', img: 'img/kondor.jpg' },
       { t: 'Capitán — Rock en vivo', code: 'next.js', cats: ['Desarrollo web', 'Marketing y redes'], d: 'Web de la banda de rock Capitán (20 años, Zona Sur) y su plataforma de venta de entradas: shows, historia, galería, videos y redes.', tags: 'Next.js · Vercel · Redes', web: 'https://capitan-web.vercel.app/', img: 'img/capitan.jpg' },
+      { t: 'Análisis de abastecimiento y stock', short: 'Abastecimiento y stock', code: 'analisis.py', cats: ['Data Science'], d: 'Curva ABC, pronóstico de demanda, punto de pedido y desempeño de proveedores, con tablero web y reporte en Excel. Datos simulados.', tags: 'Python · pandas · scikit-learn', gh: 'https://github.com/hernanarana/hernanarana.github.io/tree/main/analisis-abastecimiento', web: 'https://hernanarana.github.io/analisis-abastecimiento/', img: 'img/abastecimiento.jpg' },
       { t: 'Punto de Encuentro', short: 'Punto de Encuentro', code: 'cliente_real.jsx', cats: ['Desarrollo web'], d: 'Tienda y sitio de servicios para un técnico en refrigeración: catálogo con búsqueda y filtros, ofertas, pedidos por WhatsApp y panel de administración.', tags: 'React · Firebase · Leaflet', gh: 'https://github.com/hernanarana/punto-de-encuentro', web: 'https://punto-de-encuentro.vercel.app', img: 'img/punto.jpg' },
       { t: 'Herramienta del Sur', short: 'Herramienta del Sur', code: 'api_rest.js', cats: ['Desarrollo web'], d: 'E-commerce full stack: API REST de productos y carritos, registro y login con JWT, roles y vistas con Handlebars.', tags: 'Node.js · Express · MongoDB', gh: 'https://github.com/hernanarana/TP-Backend-Entrega-N-1', img: 'img/herramienta.jpg' },
       { t: 'Mi E-commerce', short: 'Mi E-commerce', code: 'cart.context.jsx', cats: ['Desarrollo web'], d: 'Tienda con catálogo, carrito global, checkout validado y órdenes guardadas en Firestore con actualización de stock.', tags: 'React · Firebase', gh: 'https://github.com/hernanarana/-mi-e-commerce-Arana', web: 'https://mi-e-commerce-arana.vercel.app', img: 'img/miecommerce.jpg' },
@@ -327,7 +329,7 @@ function data(){ return (function(){
       toggleMenu: () => setState({ menuOpen: !menuOpen }),
       closeMenu: () => setState({ menuOpen: false }),
       q, projects, cats, rain, empty: projects.length === 0,
-      emptyMsg: (cat === 'Data Science' && !q) ? 'Estoy cursando Data Analytics en Coderhouse: muy pronto vas a ver acá mis primeros proyectos de datos.' : 'No hay proyectos con esa búsqueda. Probá con otra palabra.',
+      emptyMsg: (cat === 'Data Science' && !q) ? 'Estoy cursando Data Science en Coderhouse: muy pronto vas a ver acá más proyectos de datos.' : 'No hay proyectos con esa búsqueda. Probá con otra palabra.',
       onSearch: (e) => setState({ q: e.target.value }),
       services: [
         { t: 'Análisis de datos', d: 'Limpieza, exploración y conclusiones claras a partir de tus datos.' },

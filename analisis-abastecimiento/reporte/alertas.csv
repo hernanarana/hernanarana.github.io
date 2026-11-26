@@ -1,0 +1,17 @@
+codigo,material,clase,proveedor,stock_actual,punto_pedido,semanas_cobertura,cantidad_sugerida,estado
+MAT-1020,Bulón M16,C,Proveedor C,1,11.0,0.5,18.0,Crítico
+MAT-1011,Válvula de freno,C,Proveedor E,2,22.0,0.6,34.0,Crítico
+MAT-1028,Chaleco reflectivo,C,Proveedor F,52,363.0,0.5,766.0,Pedir ya
+MAT-1001,Rodamiento 6308,A,Proveedor F,88,269.0,1.0,520.0,Pedir ya
+MAT-1005,Filtro de aire,A,Proveedor A,75,112.0,1.2,295.0,Pedir ya
+MAT-1000,Rodamiento 6205,C,Proveedor D,11,21.0,1.4,42.0,Pedir ya
+MAT-1009,Pastilla de freno,C,Proveedor A,14,18.0,1.8,36.0,Pedir ya
+MAT-1007,Filtro hidráulico,A,Proveedor B,63,90.0,1.9,163.0,Pedir ya
+MAT-1024,Junta tórica,C,Proveedor C,14,34.0,1.9,49.0,Pedir ya
+MAT-1010,Disco de freno,A,Proveedor C,236,394.0,2.4,555.0,Pedir ya
+MAT-1027,Anteojos de seguridad,A,Proveedor C,181,299.0,2.4,416.0,Pedir ya
+MAT-1029,Electroválvula,B,Proveedor E,15,36.0,2.5,46.0,Pedir ya
+MAT-1004,Filtro de aceite,A,Proveedor C,49,76.0,2.7,99.0,Pedir ya
+MAT-1025,Guantes de trabajo,A,Proveedor C,568,593.0,3.8,628.0,Pedir ya
+MAT-1015,Cable 4mm (rollo),B,Proveedor E,289,290.0,4.7,247.0,Pedir ya
+MAT-1019,Aceite hidráulico (20L),C,Proveedor E,26,30.0,5.2,24.0,Pedir ya
