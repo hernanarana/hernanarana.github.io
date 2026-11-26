@@ -31,9 +31,21 @@ input:focus{outline:2px solid #059669;outline-offset:1px}
 .ls-nav:hover{color:#047857!important;background:#d1fae5;box-shadow:0 2px 8px rgba(5,150,105,.18)}
 @keyframes lsMarq{to{transform:translateX(calc(-50% - 8px))}}
 .ls-track{animation:lsMarq 32s linear infinite}
-.ls-marq:hover .ls-track{animation-play-state:paused}
 @media (prefers-reduced-motion: reduce){.ls-track{animation:none}}
 .ls-burger{display:none}
+::selection{background:#a7f3d0;color:#064e3b}
+html{scrollbar-color:#059669 #ecfdf5;caret-color:#059669}
+a{text-underline-offset:3px}
+.ls-btn:active,.ls-btn2:active,.ls-filt:active{transform:scale(.97)!important}
+.ls-card img{transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ls-card:hover img{transform:scale(1.03)}
+.ls-shot{display:block;background:#fff;border:1px solid #a7f3d0;border-radius:12px;overflow:hidden;box-shadow:0 14px 30px -14px rgba(6,78,59,.45);text-decoration:none}
+.ls-shot img{display:block;width:100%;aspect-ratio:960/426;object-fit:cover;object-position:top center;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ls-shot:hover img{transform:scale(1.03)}
+.ls-shot:hover{border-color:#059669}
+.ls-bar{display:flex;gap:5px;padding:7px 10px;background:#ecfdf5;border-bottom:1px solid #d1fae5}
+.ls-bar i{width:7px;height:7px;border-radius:50%;background:#a7f3d0}
+.ls-link{display:inline-block;padding:10px 0}
 .ls-tag{display:inline-block;align-self:flex-start;background:#fef3c7;color:#92400e;font-weight:700;font-size:13px;padding:5px 10px;border-radius:6px}
 .ls-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:16px;color:#374151}
 .ls-list li{padding-left:20px;position:relative}
@@ -44,21 +56,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
  .ls-h1{font-size:34px!important;line-height:1.12!important}
  .ls-h2{font-size:28px!important}
  .ls-lead{font-size:16px!important}
- #servicios .ls-card{padding:22px!important}
+ .ls-svc{padding:22px!important}
  .ls-card h3{font-size:18px!important}
  .ls-card p,.ls-list{font-size:15px!important}
  .ls-data{padding:28px 22px!important}
- .ls-hero-art{padding:24px!important}
  #sobre-mi li{font-size:16px!important}
  .ls-data-grid{grid-template-columns:1fr!important}
- .ls-art-logo{display:none!important}
 }
 .ls-head{transition:transform .3s ease}
 .ls-head.ls-hide{transform:translateY(-110%)}
 @media (max-width: 760px){.ls-burger{display:flex}.ls-menu{display:none!important}.ls-menu.ls-open{display:flex!important;flex-direction:column;align-items:stretch;width:100%;padding:8px 0 12px;border-top:1px solid #e5e7eb}.ls-menu.ls-open a{font-size:17px;padding:14px 12px!important;text-align:center}}
 .ls-btn:hover{background:#047857!important;transform:translateY(-2px);box-shadow:0 6px 16px rgba(5,150,105,.3)}
 .ls-btn2:hover{background:#ecfdf5!important}
-.ls-card:hover{border-color:#059669!important;background:#f0fdf4!important;transform:translateY(-4px);box-shadow:0 10px 24px rgba(5,150,105,.15)}
+.ls-card:hover{border-color:#059669!important;transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(6,78,59,.35)}
 .ls-soc:hover{background:#ffffff!important;color:#047857!important}
 .ls-chip:hover{border-color:#059669!important;color:#047857!important}
 .ls-filt:hover{box-shadow:0 0 0 3px #a7f3d0}
@@ -80,7 +90,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 </head>
 <body>
 
-<div style="font-family: Figtree, system-ui, sans-serif; color: #1f2937; background-color: #ffffff; background-image: radial-gradient(#cdeedd 1.2px, transparent 1.2px); background-size: 24px 24px; width: 100%">
+<div style="font-family: Figtree, system-ui, sans-serif; color: #1f2937; background-color: #ffffff; width: 100%">
 
 <header id="head" class="ls-head" style="position: sticky; top: 0; z-index: 10; background: #ffffff; border-bottom: 1px solid #e5e7eb">
 <nav aria-label="Principal" style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
@@ -100,10 +110,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 <div id="menu" class="ls-menu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 500; font-size: 15px">
 <a href="#inicio" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Inicio</a>
 <a href="#servicios" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Servicios</a>
-<a href="#proyectos" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Proyectos</a>
+<a href="#proyectos" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Trabajos</a>
 <a href="#sobre-mi" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Sobre mí</a>
 <a href="#faq" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Preguntas</a>
-<a href="#contacto" class="ls-btn" data-close style="text-decoration: none; background: #059669; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 600">¿Arrancamos?</a>
+<a href="#contacto" class="ls-btn" data-close style="text-decoration: none; background: #059669; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 600">Pedí presupuesto</a>
 </div>
 </nav>
 </header>
@@ -111,67 +121,34 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 <section id="inicio" class="ls-sec" style="background: #ecfdf5; padding: 96px 24px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
 <div style="flex: 1 1 520px; min-width: 0">
-<p style="margin: 0 0 16px; font-weight: 600; color: #92400e; font-size: 16px">Hola, soy Hernán. Trabajo desde Buenos Aires para todo el país.</p>
 <h1 class="ls-h1" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 54px; line-height: 1.05; letter-spacing: -1px; margin: 0 0 20px; color: #064e3b">Webs, tiendas y redes que te traen clientes.</h1>
-<p class="ls-lead" style="margin: 0 0 32px; font-size: 19px; line-height: 1.6; color: #374151; max-width: 34em">Armo tu página o tu tienda online, manejo tus redes y ordeno tus números en Excel y Power BI.</p>
+<p class="ls-lead" style="margin: 0 0 32px; font-size: 19px; line-height: 1.6; color: #374151; max-width: 34em">Soy Hernán, de Buenos Aires. Armo tu página o tu tienda online, manejo tus redes y ordeno tus números en Excel y Power BI.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#contacto" class="ls-btn" style="text-decoration: none; background: #059669; color: #ffffff; padding: 16px 28px; border-radius: 8px; font-weight: 600; font-size: 16px">Pedí tu presupuesto</a>
+<a href="#contacto" class="ls-btn" style="text-decoration: none; background: #059669; color: #ffffff; padding: 16px 28px; border-radius: 8px; font-weight: 600; font-size: 16px">Pedí presupuesto</a>
 <a href="#proyectos" class="ls-btn2" style="text-decoration: none; background: #ffffff; color: #047857; border: 2px solid #059669; padding: 14px 26px; border-radius: 8px; font-weight: 600; font-size: 16px">Ver trabajos</a>
 </div>
+<p style="margin: 24px 0 0; font-size: 15px; color: #92400e; font-weight: 600">8 trabajos publicados desde 2023, para emprendimientos y marcas.</p>
 </div>
-<div class="ls-hero-art" style="flex: 1 1 360px; min-width: 0; background: #059669; border-radius: 20px; padding: 40px; color: #ffffff; display: flex; flex-direction: column; gap: 16px">
-<div class="ls-art-logo" style="position: relative; overflow: hidden; height: 220px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; margin-bottom: 8px">
-<div aria-hidden="true" style="position: absolute; inset: 0; font-family: 'JetBrains Mono', monospace">
-<div style="position: absolute; inset: 0; color: rgba(255,255,255,0.08); font-size: 12px; line-height: 1.25">
-<template data-for="rain" data-as="c">
-<span class="ls-fall" style="{{c.style}}">{{c.txt}}</span>
-</template>
-</div>
-<div style="position: absolute; inset: 0; color: rgba(255,255,255,0.14)">
-<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 12px"><span class="ls-in" style="--fs: 2.6; animation-delay: 1.8s; color: rgba(255,255,255,0.22); font-size: 150px; font-weight: 700; letter-spacing: -6px; white-space: nowrap">&lt;/&gt;</span></div>
-<span style="position: absolute; left: 16px; top: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: -260px; animation-delay: .2s">{ }</span></span>
-<span style="position: absolute; right: 16px; top: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: 200px; --fy: -200px; animation-delay: .6s">01</span></span>
-<span style="position: absolute; left: 16px; bottom: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: -200px; --fy: 200px; animation-delay: 1s">=&gt;</span></span>
-<span style="position: absolute; right: 16px; bottom: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: 260px; animation-delay: 1.4s">( );</span></span>
-</div>
-</div>
-<div style="position: relative; display: flex; flex-direction: column; align-items: center; line-height: 1">
-<span class="ls-in" style="--fy: 24px; animation-delay: 2.4s; font-family: Montserrat, sans-serif; font-weight: 800; font-size: 64px; color: #ffffff; letter-spacing: -2px">Lu<span style="color: #a7f3d0">San</span></span>
-<span class="ls-in" style="animation-delay: 2.9s; font-family: Montserrat, sans-serif; font-weight: 600; font-size: 14px; color: #d1fae5; letter-spacing: 9px; margin-top: 8px; padding-left: 9px">PRO</span>
-</div>
-</div>
-<div role="img" aria-label="Terminal: páginas web y tiendas online, Instagram, Facebook y publicidad, reels y contenido, Power BI y Excel, automatización" style="background: #064e3b; border-radius: 12px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.7">
-<div aria-hidden="true" style="display: flex; gap: 6px; padding: 10px 14px; background: #053d2f">
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #34d399"></span>
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #a7f3d0"></span>
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #ecfdf5"></span>
-</div>
-<div aria-hidden="true" style="padding: 14px 18px 18px; color: #d1fae5; display: flex; flex-direction: column">
-<span><span style="color: #fbbf24">$ </span><span class="ls-type">SELECT servicio FROM lusan_pro;</span></span>
-<span class="ls-in" style="animation-delay: 5s; color: #ffffff">&gt; Páginas web · Tiendas online</span>
-<span class="ls-in" style="animation-delay: 5.25s; color: #ffffff">&gt; Instagram · Facebook · Ads</span>
-<span class="ls-in" style="animation-delay: 5.5s; color: #ffffff">&gt; Reels · Contenido</span>
-<span class="ls-in" style="animation-delay: 5.75s; color: #ffffff">&gt; Power BI · Excel</span>
-<span class="ls-in" style="animation-delay: 6s; color: #ffffff">&gt; Automatización</span>
-<span class="ls-in" style="animation-delay: 6.25s"><span style="color: #fbbf24">$ </span><span class="ls-cur">▍</span></span>
-</div>
-</div>
+<div style="flex: 1 1 440px; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+<a href="https://www.somostilia.com/" target="_blank" rel="noopener" class="ls-shot ls-in" style="grid-column: 1 / -1; --fy: 18px; animation-delay: .15s" aria-label="Ver el sitio de Tilia"><span class="ls-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="img/tilia.jpg" alt="Sitio de Tilia, plataforma para psicólogos"></a>
+<a href="https://kondorparfums.com/" target="_blank" rel="noopener" class="ls-shot ls-in" style="--fy: 18px; animation-delay: .3s" aria-label="Ver la tienda de Kondor Parfums"><span class="ls-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="img/kondor.jpg" alt="Tienda online de Kondor Parfums"></a>
+<a href="https://capitan-web.vercel.app/" target="_blank" rel="noopener" class="ls-shot ls-in" style="--fy: 18px; animation-delay: .45s" aria-label="Ver la web de Capitán"><span class="ls-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="img/capitan.jpg" alt="Web de la banda Capitán"></a>
 </div>
 </div>
 </section>
 
 <section id="servicios" class="ls-sec" style="padding: 96px 24px">
-<div class="ls-rev" style="max-width: 1200px; margin: 0 auto">
-<h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.5px; margin: 0 0 10px; color: #064e3b">Qué hago</h2>
+<div style="max-width: 1200px; margin: 0 auto">
+<h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.5px; margin: 0 0 10px; color: #064e3b">Servicios</h2>
 <p class="ls-lead" style="margin: 0 0 36px; font-size: 18px; color: #4b5563; max-width: 40em; line-height: 1.6">Elegí lo que necesitás. Si es más de una cosa, lo armamos en un paquete.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 24px">
-<div class="ls-card" style="border: 2px solid #059669; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 14px; background: #ffffff">
+<div class="ls-svc" style="border: 2px solid #059669; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 14px; background: #ffffff">
 <span class="ls-tag">Lo más pedido</span>
 <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; margin: 0; color: #064e3b">Páginas web y tiendas online</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #374151">Tu negocio en internet, listo para vender.</p>
 <ul class="ls-list"><li>Landing o web institucional</li><li>Tienda con carrito y Mercado Pago</li><li>Pedidos directo a tu WhatsApp</li><li>Pensada primero para el celular</li></ul>
 </div>
-<div class="ls-card" style="border: 2px solid #059669; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 14px; background: #ffffff">
+<div class="ls-svc" style="border: 2px solid #059669; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 14px; background: #ffffff">
 <span class="ls-tag">Abono mensual</span>
 <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; margin: 0; color: #064e3b">Redes y marketing digital</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #374151">Contenido para que te conozcan y te escriban.</p>
@@ -195,23 +172,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 </section>
 
 <section class="ls-sec" style="background: #f9fafb; padding: 56px 24px">
-<div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px">
-<h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; margin: 0; color: #064e3b">Tecnologías con las que trabajo</h2>
-<div class="ls-marq" style="width: 100%; overflow: hidden; padding: 8px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)">
-<div class="ls-track" style="display: flex; gap: 16px; width: max-content">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px">
+<h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; margin: 0; color: #064e3b">Herramientas que uso</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 900px">
 <template data-for="techLoop" data-as="x">
-<div class="ls-chip" style="flex: 0 0 auto; width: 180px; height: 88px; background: #ffffff; border: 1px solid #d1d5db; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px">
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: #047857">{{x.k}}</span>
-<span style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 18px; color: #064e3b">{{x.n}}</span>
-</div>
+<span style="background: #ffffff; border: 1px solid #d1d5db; border-radius: 999px; padding: 10px 18px; font-weight: 600; font-size: 15px; color: #064e3b">{{x.n}}</span>
 </template>
-</div>
 </div>
 </div>
 </section>
 
 <section id="proyectos" class="ls-sec" style="padding: 96px 24px">
-<div class="ls-rev" style="max-width: 1200px; margin: 0 auto">
+<div style="max-width: 1200px; margin: 0 auto">
 <h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.5px; margin: 0 0 10px; color: #064e3b">Trabajos</h2>
 <p class="ls-lead" style="margin: 0 0 28px; font-size: 18px; color: #4b5563">Filtrá por área o buscá por tecnología.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 32px">
@@ -232,7 +204,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; margin: 0; color: #064e3b">{{p.t}}</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4b5563">{{p.d}}</p>
 <span style="font-size: 14px; color: #374151">{{p.tags}}</span>
-<div style="display: flex; flex-wrap: wrap; gap: 16px; font-weight: 600; font-size: 15px"><div data-ifitem="hasWeb"><a href="{{p.web}}" target="_blank" rel="noopener">Ver sitio →</a></div><div data-ifitem="hasGh"><a href="{{p.gh}}" target="_blank" rel="noopener">Ver código en GitHub →</a></div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600; font-size: 15px"><div data-ifitem="hasWeb"><a href="{{p.web}}" target="_blank" rel="noopener" class="ls-link">Ver sitio</a></div><div data-ifitem="hasGh"><a href="{{p.gh}}" target="_blank" rel="noopener" class="ls-link">Ver código</a></div></div>
 </div>
 </div>
 </template>
@@ -244,7 +216,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 </section>
 
 <section id="sobre-mi" class="ls-sec" style="background: #064e3b; color: #ffffff; padding: 96px 24px">
-<div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
 <div style="flex: 1 1 420px; min-width: 0">
 <h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 16px; color: #ffffff">¿Por qué LuSan PRO?</h2>
 <p class="ls-lead" style="margin: 0; font-size: 18px; line-height: 1.7; color: #d1fae5; max-width: 34em">Soy Hernán Arana. Desde 2023 hago webs, tiendas y redes para emprendimientos y empresas. Soy desarrollador Full Stack, me especializo en Data Science y uso Excel y Power BI todos los días.</p>
@@ -259,7 +231,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 </section>
 
 <section id="faq" class="ls-sec" style="padding: 96px 24px">
-<div class="ls-rev" style="max-width: 860px; margin: 0 auto">
+<div style="max-width: 860px; margin: 0 auto">
 <h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 32px; color: #064e3b">Preguntas frecuentes</h2>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <template data-for="faq" data-as="f">
@@ -273,7 +245,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f5
 </section>
 
 <section id="contacto" class="ls-sec" style="background: #059669; color: #ffffff; padding: 96px 24px">
-<div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
 <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <h2 class="ls-h2" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; margin: 0">Conversemos</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.6">Contame tu proyecto y te respondo con una propuesta.</p>
@@ -362,7 +334,7 @@ function data(){ return (function(){
           { n: 'Express', k: 'GET /api' }, { n: 'MongoDB', k: 'db.find()' }, { n: 'Firebase', k: 'firestore' },
           { n: 'HTML · CSS', k: '<html>' }, { n: 'Git', k: 'git push' }, { n: 'Meta Business', k: '#reels' }
         ];
-        return t.concat(t);
+        return t;
       })(),
       faq: [
         { q: '¿Trabajás con empresas de cualquier tamaño?', a: 'Sí, desde emprendimientos hasta empresas. El alcance se adapta a cada caso.' },
