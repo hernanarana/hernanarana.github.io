@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LuSan PRO · Hernán Arana | Datos, web y marketing digital</title>
+<meta name="description" content="Hernán Arana · LuSan PRO: análisis de datos con SAP HANA, Power BI y Excel, páginas web, tiendas online y marketing en redes. Buenos Aires, trabajo remoto.">
+<meta property="og:title" content="LuSan PRO · Hernán Arana">
+<meta property="og:description" content="Datos, SAP HANA, Power BI, desarrollo web y marketing digital.">
+<meta name="theme-color" content="#059669">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23059669'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='900' font-size='28' fill='white' text-anchor='middle'%3ELS%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff}
+a{color:#047857}a:hover{color:#065f46}
+summary{cursor:pointer;list-style:none}
+input:focus{outline:2px solid #059669;outline-offset:1px}
+@keyframes lsIn{from{opacity:0;transform:translate(var(--fx,0px),var(--fy,0px)) scale(var(--fs,1))}to{opacity:1;transform:none}}
+@keyframes lsFall{from{top:-70%}to{top:110%}}
+.ls-in{display:inline-block;animation:lsIn .8s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion: reduce){.ls-in,.ls-fall{animation:none!important}}
+.ls-nav,.ls-btn,.ls-btn2,.ls-card,.ls-soc,.ls-chip,.ls-filt{transition:all .2s ease}
+.ls-nav:hover{color:#047857!important;background:#d1fae5;box-shadow:0 2px 8px rgba(5,150,105,.18)}
+@keyframes lsMarq{to{transform:translateX(calc(-50% - 8px))}}
+.ls-track{animation:lsMarq 32s linear infinite}
+.ls-marq:hover .ls-track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.ls-track{animation:none}}
+.ls-burger{display:none}
+.ls-head{transition:transform .3s ease}
+.ls-head.ls-hide{transform:translateY(-110%)}
+@media (max-width: 760px){.ls-burger{display:flex}.ls-menu{display:none!important}.ls-menu.ls-open{display:flex!important;flex-direction:column;align-items:stretch;width:100%;padding:8px 0 12px;border-top:1px solid #e5e7eb}.ls-menu.ls-open a{font-size:17px;padding:14px 12px!important;text-align:center}}
+.ls-btn:hover{background:#047857!important;transform:translateY(-2px);box-shadow:0 6px 16px rgba(5,150,105,.3)}
+.ls-btn2:hover{background:#ecfdf5!important}
+.ls-card:hover{border-color:#059669!important;background:#f0fdf4!important;transform:translateY(-4px);box-shadow:0 10px 24px rgba(5,150,105,.15)}
+.ls-soc:hover{background:#ffffff!important;color:#047857!important}
+.ls-chip:hover{border-color:#059669!important;color:#047857!important}
+.ls-filt:hover{box-shadow:0 0 0 3px #a7f3d0}
+@keyframes lsWipe{0%{transform:translateX(-101%)}45%{transform:translateX(0)}100%{transform:translateX(101%)}}
+@keyframes lsFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ls-faq{position:relative;overflow:hidden}
+.ls-faq[open]::after{content:'';position:absolute;inset:0;background:#059669;animation:lsWipe .8s cubic-bezier(.6,0,.3,1) both;pointer-events:none}
+.ls-faq[open] .ls-ans{animation:lsFade .4s ease .4s both}
+@media (prefers-reduced-motion: reduce){.ls-faq[open]::after{display:none}.ls-faq[open] .ls-ans{animation:none}}
+@keyframes lsType{from{width:0}}
+@keyframes lsBlink{50%{opacity:0}}
+.ls-type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:31ch;animation:lsType 1.6s steps(31) 3.3s both}
+.ls-cur{animation:lsBlink 1s steps(1) infinite}
+@keyframes lsRise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.ls-rev{animation:lsRise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+@media (prefers-reduced-motion: reduce){.ls-type,.ls-rev{animation:none!important}}
+</style>
+
+</head>
+<body>
+
+<div style="font-family: Inter, system-ui, sans-serif; color: #1f2937; background-color: #ffffff; background-image: radial-gradient(#cdeedd 1.2px, transparent 1.2px); background-size: 24px 24px; width: 100%">
+
+<header id="head" class="ls-head" style="position: sticky; top: 0; z-index: 10; background: #ffffff; border-bottom: 1px solid #e5e7eb">
+<nav aria-label="Principal" style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#inicio" style="position: relative; text-decoration: none; display: flex; flex-direction: column; align-items: center; line-height: 1; padding: 4px 10px">
+<span aria-hidden="true" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 52px; letter-spacing: -3px; color: #c9edda; white-space: nowrap">&lt;/&gt;</span>
+<span style="position: relative; font-family: Montserrat, sans-serif; font-weight: 800; font-size: 28px; color: #059669; letter-spacing: -0.5px">LuSan</span>
+<span style="position: relative; font-family: Montserrat, sans-serif; font-weight: 600; font-size: 10px; color: #6b7280; letter-spacing: 4px; margin-top: 3px; padding-left: 4px">PRO</span>
+</a>
+<button type="button" class="ls-burger" id="burger" aria-label="Abrir menú" aria-expanded="false" style="width: 48px; height: 48px; align-items: center; justify-content: center; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 10px; cursor: pointer">
+<div data-if="menuOpen">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</div>
+<div data-if="menuClosed">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</div>
+</button>
+<div id="menu" class="ls-menu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 500; font-size: 15px">
+<a href="#inicio" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Inicio</a>
+<a href="#servicios" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Servicios</a>
+<a href="#proyectos" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Proyectos</a>
+<a href="#sobre-mi" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Sobre mí</a>
+<a href="#faq" class="ls-nav" data-close style="text-decoration: none; color: #374151; padding: 10px 14px; border-radius: 8px">Preguntas</a>
+<a href="#contacto" class="ls-btn" data-close style="text-decoration: none; background: #059669; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-weight: 600">¿Arrancamos?</a>
+</div>
+</nav>
+</header>
+
+<section id="inicio" style="background: #ecfdf5; padding: 96px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 1 1 520px; min-width: 0">
+<p style="margin: 0 0 16px; font-weight: 600; color: #047857; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">Hernán · SAP HANA · Data Science · Web y Marketing</p>
+<h1 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 52px; line-height: 1.1; margin: 0 0 20px; color: #111827">Convierto tus datos en decisiones y tus procesos en <span style="color: #059669">software que funciona</span>.</h1>
+<p style="margin: 0 0 32px; font-size: 19px; line-height: 1.6; color: #374151">Trabajo con <strong>SAP HANA, Power BI y Excel</strong>, desarrollo <strong>páginas web y tiendas online</strong>, y gestiono <strong>redes sociales</strong> para empresas que quieren crecer.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#contacto" class="ls-btn" style="text-decoration: none; background: #059669; color: #ffffff; padding: 16px 28px; border-radius: 8px; font-weight: 600; font-size: 16px">Potenciá tu empresa hoy</a>
+<a href="#proyectos" class="ls-btn2" style="text-decoration: none; background: #ffffff; color: #047857; border: 2px solid #059669; padding: 14px 26px; border-radius: 8px; font-weight: 600; font-size: 16px">Ver proyectos</a>
+</div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; background: #059669; border-radius: 20px; padding: 40px; color: #ffffff; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; overflow: hidden; height: 220px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; margin-bottom: 8px">
+<div aria-hidden="true" style="position: absolute; inset: 0; font-family: 'JetBrains Mono', monospace">
+<div style="position: absolute; inset: 0; color: rgba(255,255,255,0.08); font-size: 12px; line-height: 1.25">
+<template data-for="rain" data-as="c">
+<span class="ls-fall" style="{{c.style}}">{{c.txt}}</span>
+</template>
+</div>
+<div style="position: absolute; inset: 0; color: rgba(255,255,255,0.14)">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 12px"><span class="ls-in" style="--fs: 2.6; animation-delay: 1.8s; color: rgba(255,255,255,0.22); font-size: 150px; font-weight: 700; letter-spacing: -6px; white-space: nowrap">&lt;/&gt;</span></div>
+<span style="position: absolute; left: 16px; top: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: -260px; animation-delay: .2s">{ }</span></span>
+<span style="position: absolute; right: 16px; top: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: 200px; --fy: -200px; animation-delay: .6s">01</span></span>
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: -200px; --fy: 200px; animation-delay: 1s">=&gt;</span></span>
+<span style="position: absolute; right: 16px; bottom: 14px; font-size: 18px; font-weight: 500"><span class="ls-in" style="--fx: 260px; animation-delay: 1.4s">( );</span></span>
+</div>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; line-height: 1">
+<span class="ls-in" style="--fy: 24px; animation-delay: 2.4s; font-family: Montserrat, sans-serif; font-weight: 800; font-size: 64px; color: #ffffff; letter-spacing: -2px">LuSan</span>
+<span class="ls-in" style="animation-delay: 2.9s; font-family: Montserrat, sans-serif; font-weight: 600; font-size: 14px; color: #d1fae5; letter-spacing: 9px; margin-top: 8px; padding-left: 9px">PRO</span>
+</div>
+</div>
+<div role="img" aria-label="Terminal: SAP HANA, Excel y Power BI, Análisis de datos y reportes, Dashboards y automatización, Páginas web y APIs, Instagram y Facebook" style="background: #064e3b; border-radius: 12px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.7">
+<div aria-hidden="true" style="display: flex; gap: 6px; padding: 10px 14px; background: #053d2f">
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #34d399"></span>
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #a7f3d0"></span>
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #ecfdf5"></span>
+</div>
+<div aria-hidden="true" style="padding: 14px 18px 18px; color: #d1fae5; display: flex; flex-direction: column">
+<span><span style="color: #6ee7b7">$ </span><span class="ls-type">SELECT servicio FROM lusan_pro;</span></span>
+<span class="ls-in" style="animation-delay: 5s; color: #ffffff">&gt; SAP HANA · Excel · Power BI</span>
+<span class="ls-in" style="animation-delay: 5.25s; color: #ffffff">&gt; Análisis de datos · Reportes</span>
+<span class="ls-in" style="animation-delay: 5.5s; color: #ffffff">&gt; Dashboards · Automatización</span>
+<span class="ls-in" style="animation-delay: 5.75s; color: #ffffff">&gt; Páginas web · APIs</span>
+<span class="ls-in" style="animation-delay: 6s; color: #ffffff">&gt; Instagram · Facebook · Ads</span>
+<span class="ls-in" style="animation-delay: 6.25s"><span style="color: #6ee7b7">$ </span><span class="ls-cur">▍</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="servicios" style="padding: 96px 24px">
+<div class="ls-rev" style="max-width: 1200px; margin: 0 auto">
+<p style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #047857">01 // servicios</p>
+<h2 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 12px; color: #111827">Servicios</h2>
+<p style="margin: 0 0 40px; font-size: 18px; color: #4b5563; max-width: 720px; line-height: 1.6">Soluciones de datos y desarrollo de punta a punta: desde la base de datos hasta el tablero que mira tu equipo.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px">
+<template data-for="services" data-as="s">
+<div class="ls-card" style="border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 48px; height: 48px; border-radius: 12px; background: #d1fae5; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2"></path></svg>
+</div>
+<h3 style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 20px; margin: 0; color: #111827">{{s.t}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4b5563">{{s.d}}</p>
+<a href="#contacto" style="font-weight: 600; font-size: 15px">Ver más →</a>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<section style="background: #f9fafb; padding: 56px 24px">
+<div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px">
+<h2 style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 24px; margin: 0; color: #111827">Tecnologías con las que trabajo</h2>
+<div class="ls-marq" style="width: 100%; overflow: hidden; padding: 8px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)">
+<div class="ls-track" style="display: flex; gap: 16px; width: max-content">
+<template data-for="techLoop" data-as="x">
+<div class="ls-chip" style="flex: 0 0 auto; width: 180px; height: 88px; background: #ffffff; border: 1px solid #d1d5db; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: #047857">{{x.k}}</span>
+<span style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 18px; color: #111827">{{x.n}}</span>
+</div>
+</template>
+</div>
+</div>
+</div>
+</section>
+
+<section id="proyectos" style="padding: 96px 24px">
+<div class="ls-rev" style="max-width: 1200px; margin: 0 auto">
+<p style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #047857">02 // proyectos</p>
+<h2 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 12px; color: #111827">Proyectos</h2>
+<p style="margin: 0 0 28px; font-size: 18px; color: #4b5563">Buscá por nombre o tecnología, o filtrá por área.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 32px">
+<label for="buscar" style="position: absolute; width: 1px; height: 1px; overflow: hidden">Buscar proyectos</label>
+<input id="buscar" type="search" placeholder="Buscar: React, Firebase, marketing…"  style="flex: 1 1 320px; min-width: 0; font-size: 16px; padding: 14px 18px; border: 1px solid #d1d5db; border-radius: 10px; font-family: Inter, sans-serif">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<template data-for="cats" data-as="c">
+<button type="button" class="ls-filt" data-cat="{{c.name}}" style="{{c.style}}">{{c.name}}</button>
+</template>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px">
+<template data-for="projects" data-as="p">
+<div class="ls-card" style="border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div data-ifitem="hasImg"><img src="{{p.img}}" alt="Captura de {{p.t}}" style="display: block; width: 100%; height: 180px; object-fit: cover; object-position: top center; border-bottom: 1px solid #e5e7eb"></div><div data-ifitem="noImg"><div style="height: 180px; background: #064e3b; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 6px; padding: 20px 24px; box-sizing: border-box"><span aria-hidden="true" style="position: absolute; right: -8px; top: -18px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 120px; color: rgba(255,255,255,0.07); letter-spacing: -6px">&lt;/&gt;</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #6ee7b7">{{p.code}}</span><span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 24px; color: #ffffff">{{p.short}}</span></div></div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #047857; text-transform: uppercase; letter-spacing: 1px">{{p.cat}}</span>
+<h3 style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 20px; margin: 0; color: #111827">{{p.t}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4b5563">{{p.d}}</p>
+<span style="font-size: 14px; color: #374151">{{p.tags}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; font-weight: 600; font-size: 15px"><div data-ifitem="hasWeb"><a href="{{p.web}}" target="_blank" rel="noopener">Ver sitio →</a></div><div data-ifitem="hasGh"><a href="{{p.gh}}" target="_blank" rel="noopener">Ver código en GitHub →</a></div></div>
+</div>
+</div>
+</template>
+</div>
+<div data-if="empty">
+<p style="margin: 24px 0 0; font-size: 17px; color: #4b5563"><span data-text="emptyMsg"></span></p>
+</div>
+</div>
+</section>
+
+<section id="sobre-mi" style="background: #064e3b; color: #ffffff; padding: 96px 24px">
+<div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 420px; min-width: 0">
+<p style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #6ee7b7">03 // por_que</p>
+<h2 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 16px; color: #ffffff">¿Por qué LuSan PRO?</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #d1fae5">Soy Hernán Arana. Trabajo en el área de Abastecimiento de <strong>Trenes Argentinos</strong>, donde uso <strong>SAP HANA, Excel y Power BI</strong> todos los días para gestionar pedidos, proveedores y stock. Desde fines de 2023 hago trabajos independientes, me formé como <strong>desarrollador Full Stack</strong> en Coderhouse y hoy curso la carrera de <strong>Data Science</strong>.</p>
+</div>
+<ul style="flex: 1 1 420px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; font-size: 17px; line-height: 1.5">
+<li><strong>Experiencia real con datos:</strong> SAP HANA, Excel y Power BI en una empresa grande.</li>
+<li><strong>Datos que se entienden:</strong> dashboards y reportes claros.</li>
+<li><strong>Automatización</strong> de tareas repetitivas que hoy te llevan horas.</li>
+<li><strong>Comunicación directa</strong> y avances periódicos.</li>
+<li><strong>Código prolijo y documentado</strong>, fácil de mantener.</li>
+<li><strong>Uso de IA</strong> para acelerar análisis y desarrollo.</li>
+<li><strong>Todo en un lugar:</strong> datos, software, web y redes con la misma mirada.</li>
+</ul>
+</div>
+</section>
+
+<section id="faq" style="padding: 96px 24px">
+<div class="ls-rev" style="max-width: 860px; margin: 0 auto">
+<p style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #047857">04 // preguntas</p>
+<h2 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 32px; color: #111827">Preguntas frecuentes</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<template data-for="faq" data-as="f">
+<details class="ls-chip ls-faq" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px">
+<summary style="font-weight: 600; font-size: 17px; color: #111827">{{f.q}}</summary>
+<p class="ls-ans" style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #4b5563">{{f.a}}</p>
+</details>
+</template>
+</div>
+</div>
+</section>
+
+<section id="contacto" style="background: #059669; color: #ffffff; padding: 96px 24px">
+<div class="ls-rev" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #d1fae5">05 // contacto</p>
+<h2 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 40px; margin: 0">Conversemos</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6">Contame tu proyecto y te respondo con una propuesta.</p>
+<span style="font-size: 17px">Email: <a href="mailto:hernanarana88@gmail.com" style="color: #ffffff">hernanarana88@gmail.com</a></span>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a href="https://www.linkedin.com/in/hernanarana" target="_blank" rel="noopener" class="ls-soc" style="color: #ffffff; border: 1px solid #ffffff; border-radius: 999px; padding: 10px 18px; text-decoration: none; font-weight: 600">LinkedIn</a>
+<a href="https://github.com/hernanarana" target="_blank" rel="noopener" class="ls-soc" style="color: #ffffff; border: 1px solid #ffffff; border-radius: 999px; padding: 10px 18px; text-decoration: none; font-weight: 600">GitHub</a>
+</div>
+</div>
+<form id="contact-form" style="flex: 1 1 420px; min-width: 0; background: #ffffff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 14px; color: #1f2937">
+<label for="nombre" style="font-weight: 600; font-size: 15px">Nombre</label>
+<input id="nombre" type="text" style="font-size: 16px; padding: 12px 14px; border: 1px solid #d1d5db; border-radius: 8px">
+<label for="email" style="font-weight: 600; font-size: 15px">Email</label>
+<input id="email" type="email" style="font-size: 16px; padding: 12px 14px; border: 1px solid #d1d5db; border-radius: 8px">
+<label for="mensaje" style="font-weight: 600; font-size: 15px">¿En qué te puedo ayudar?</label>
+<textarea id="mensaje" rows="4" style="font-size: 16px; padding: 12px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-family: Inter, sans-serif"></textarea>
+<button type="submit" class="ls-btn" style="background: #059669; color: #ffffff; border: 0; border-radius: 8px; padding: 16px; font-weight: 600; font-size: 16px; cursor: pointer">Enviar consulta</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #064e3b; color: #d1fae5; padding: 48px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center">
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; line-height: 1; padding: 4px 10px">
+<span aria-hidden="true" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 50px; letter-spacing: -3px; color: rgba(255,255,255,0.18); white-space: nowrap">&lt;/&gt;</span>
+<span style="position: relative; font-family: Montserrat, sans-serif; font-weight: 800; font-size: 26px; color: #ffffff">LuSan</span>
+<span style="position: relative; font-family: Montserrat, sans-serif; font-weight: 600; font-size: 10px; color: #a7f3d0; letter-spacing: 4px; margin-top: 3px; padding-left: 4px">PRO</span>
+</div>
+<span style="font-size: 14px">SAP HANA · Data Science · Web · Marketing digital</span>
+<span style="font-size: 14px">© 2026 LuSan PRO · Hernán Arana</span>
+</div>
+</footer>
+
+<a href="#contacto" aria-label="Escribir por WhatsApp" class="ls-btn" style="position: fixed; right: 24px; bottom: 24px; width: 56px; height: 56px; border-radius: 50%; background: #059669; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2)">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"></path></svg>
+</a>
+</div>
+
+<script>
+
+const S={q:'',cat:'Todos',menuOpen:false,scrolling:false};
+function setState(p){Object.assign(S,p);render();}
+function data(){ return (function(){
+    const q = (S.q) || '';
+    const cat = (S.cat) || 'Todos';
+    const all = [
+      { t: 'Tilia', code: 'agenda.tsx', cats: ['Desarrollo web', 'Marketing y redes'], d: 'Plataforma para psicólogos y terapeutas: agenda con turnos recurrentes, fichas clínicas cifradas, reservas online, recordatorios por WhatsApp, cobros con Mercado Pago y estadísticas. Diseño, desarrollo y marketing.', tags: 'React · Vite · Mercado Pago · WhatsApp', web: 'https://www.somostilia.com/', img: 'img/tilia.jpg' },
+      { t: 'Kondor Parfums', code: 'shopify', cats: ['Desarrollo web', 'Marketing y redes'], d: 'Tienda online de perfumes árabes y de diseñador: tema propio en Shopify, campañas como Black Friday, packs, club de clientes, cupón de bienvenida, WhatsApp e Instagram.', tags: 'Shopify · Mercado Pago · Instagram', web: 'https://kondorparfums.com/', img: 'img/kondor.jpg' },
+      { t: 'Capitán — Rock en vivo', code: 'next.js', cats: ['Desarrollo web', 'Marketing y redes'], d: 'Web de la banda de rock Capitán (20 años, Zona Sur) y su plataforma de venta de entradas: shows, historia, galería, videos y redes.', tags: 'Next.js · Vercel · Redes', web: 'https://capitan-web.vercel.app/', img: 'img/capitan.jpg' },
+      { t: 'Punto de Encuentro', short: 'Punto de Encuentro', code: 'cliente_real.jsx', cats: ['Desarrollo web'], d: 'Tienda y sitio de servicios para un técnico en refrigeración: catálogo con búsqueda y filtros, ofertas, pedidos por WhatsApp y panel de administración.', tags: 'React · Firebase · Leaflet', gh: 'https://github.com/hernanarana/punto-de-encuentro', web: 'https://punto-de-encuentro.vercel.app', img: 'img/punto.jpg' },
+      { t: 'Herramienta del Sur', short: 'Herramienta del Sur', code: 'api_rest.js', cats: ['Desarrollo web'], d: 'E-commerce full stack: API REST de productos y carritos, registro y login con JWT, roles y vistas con Handlebars.', tags: 'Node.js · Express · MongoDB', gh: 'https://github.com/hernanarana/TP-Backend-Entrega-N-1', img: 'img/herramienta.jpg' },
+      { t: 'Mi E-commerce', short: 'Mi E-commerce', code: 'cart.context.jsx', cats: ['Desarrollo web'], d: 'Tienda con catálogo, carrito global, checkout validado y órdenes guardadas en Firestore con actualización de stock.', tags: 'React · Firebase', gh: 'https://github.com/hernanarana/-mi-e-commerce-Arana', web: 'https://mi-e-commerce-arana.vercel.app', img: 'img/miecommerce.jpg' },
+      { t: 'TerrorStore', short: 'TerrorStore', code: 'main.js', cats: ['Desarrollo web'], d: 'E-commerce temático de terror en JavaScript puro: catálogo desde JSON, carrito, checkout y alertas.', tags: 'HTML · CSS · JavaScript', gh: 'https://github.com/hernanarana/terrorstore', web: 'https://hernanarana.github.io/terrorstore/', img: 'img/terrorstore.jpg' },
+      { t: 'Videos y redes de LuSan PRO', short: 'Reels LuSan PRO', code: '#marketing', cats: ['Marketing y redes'], d: 'Identidad visual, videos animados con subtítulos para Reels e historias, y plan de contenido para Instagram y Facebook.', tags: 'Video · Instagram · Facebook', img: 'img/videos.jpg' }
+    ].map(p => ({ ...p, short: p.short || p.t, cat: p.cats.join(' · '), hasGh: !!p.gh, hasWeb: !!p.web, hasImg: !!p.img, noImg: !p.img }));
+    const ql = q.toLowerCase();
+    const projects = all.filter(p => (cat === 'Todos' || p.cats.includes(cat)) && (p.t + ' ' + p.d + ' ' + p.tags + ' ' + p.cat).toLowerCase().includes(ql));
+    const on = 'font-family: Inter, sans-serif; font-size: 15px; font-weight: 600; padding: 12px 18px; border-radius: 999px; cursor: pointer; background: #059669; color: #ffffff; border: 1px solid #059669';
+    const off = 'font-family: Inter, sans-serif; font-size: 15px; font-weight: 600; padding: 12px 18px; border-radius: 999px; cursor: pointer; background: #ffffff; color: #047857; border: 1px solid #059669';
+    const cats = ['Todos', 'Desarrollo web', 'Marketing y redes', 'Data Science'].map(name => ({ name, style: name === cat ? on : off, pick: null }));
+    const chars = '01{}<>/;=()10';
+    const n = 12;
+    const rain = [];
+    for (let i = 0; i < n; i++) {
+      let txt = '';
+      for (let k = 0; k < 18; k++) txt += chars[(i * 7 + k * 5 + (i * k) % 3) % chars.length] + '\n';
+      const dur = 6 + ((i * 3) % 5);
+      const delay = -((i * 1.7) % dur);
+      rain.push({ txt, style: 'position: absolute; left: ' + ((i + 0.5) * 100 / n) + '%; top: -70%; white-space: pre-line; text-align: center; animation: lsFall ' + dur + 's linear ' + delay + 's infinite' });
+    }
+    const menuOpen = !!(S.menuOpen);
+    return {
+      menuOpen, menuClosed: !menuOpen, menuCls: menuOpen ? 'ls-open' : '',
+      headCls: (S.scrolling) ? 'ls-hide' : '',
+      burgerLabel: menuOpen ? 'Cerrar menú' : 'Abrir menú',
+      toggleMenu: () => setState({ menuOpen: !menuOpen }),
+      closeMenu: () => setState({ menuOpen: false }),
+      q, projects, cats, rain, empty: projects.length === 0,
+      emptyMsg: (cat === 'Data Science' && !q) ? 'Estoy cursando Data Analytics en Coderhouse: muy pronto vas a ver acá mis primeros proyectos de datos.' : 'No hay proyectos con esa búsqueda. Probá con otra palabra.',
+      onSearch: (e) => setState({ q: e.target.value }),
+      services: [
+        { t: 'Análisis de datos', d: 'Limpieza, exploración y conclusiones claras a partir de tus datos.' },
+        { t: 'Dashboards en Power BI', d: 'Tableros para seguir ventas, compras, stock y operaciones de un vistazo.' },
+        { t: 'Datos y reportes con SAP', d: 'Consultas, control y seguimiento de información en SAP HANA para compras, stock y proveedores.' },
+        { t: 'Excel profesional', d: 'Planillas ordenadas, fórmulas y reportes que te ahorran horas de trabajo.' },
+        { t: 'Automatización de procesos', d: 'Scripts e integraciones que eliminan tareas manuales repetitivas.' },
+        { t: 'Páginas web', d: 'Sitios, landing pages y portfolios modernos, rápidos y adaptados al celular.' },
+        { t: 'Tiendas online', d: 'Catálogos y e-commerce con carrito, pedidos por WhatsApp y panel para cargar productos.' },
+        { t: 'Marketing digital y redes', d: 'Gestión de Instagram y Facebook: contenido, videos y campañas para atraer clientes.' }
+      ],
+      techLoop: (() => {
+        const t = [
+          { n: 'SAP HANA', k: '<db/>' }, { n: 'Power BI', k: 'dashboard' }, { n: 'Excel', k: '.xlsx' },
+          { n: 'JavaScript', k: '.js' }, { n: 'React', k: '<App />' }, { n: 'Node.js', k: 'npm run dev' },
+          { n: 'Express', k: 'GET /api' }, { n: 'MongoDB', k: 'db.find()' }, { n: 'Firebase', k: 'firestore' },
+          { n: 'HTML · CSS', k: '<html>' }, { n: 'Git', k: 'git push' }, { n: 'Meta Business', k: '#reels' }
+        ];
+        return t.concat(t);
+      })(),
+      faq: [
+        { q: '¿Trabajás con empresas de cualquier tamaño?', a: 'Sí, desde emprendimientos hasta empresas con SAP. El alcance se adapta a cada caso.' },
+        { q: '¿También hacés páginas web y redes sociales?', a: 'Sí. Diseño y desarrollo sitios web, y gestiono Instagram y Facebook con contenido y videos para atraer clientes.' },
+        { q: '¿Cómo es el proceso de trabajo?', a: 'Charlamos tu necesidad, te paso una propuesta con tiempos y costo, y avanzamos con entregas parciales.' },
+        { q: '¿Cuánto cuesta un proyecto?', a: 'Depende del alcance. Trabajo por hora o por proyecto cerrado: escribime y te paso un presupuesto sin cargo.' },
+        { q: '¿Trabajás de forma remota?', a: 'Sí, trabajo de forma remota desde Buenos Aires, Argentina.' },
+        { q: '¿Ofrecés soporte después de entregar?', a: 'Sí. Después de entregar te acompaño con ajustes y dudas; el alcance del soporte lo acordamos en la propuesta.' }
+      ]
+    };})(); }
+const esc=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function render(){
+  const d=data();
+  document.querySelectorAll('template[data-for]').forEach(t=>{
+    while(t.nextElementSibling&&t.nextElementSibling.hasAttribute('data-gen'))t.nextElementSibling.remove();
+    const as=t.dataset.as, list=d[t.dataset.for]||[], tpl=t.innerHTML, frag=document.createDocumentFragment();
+    list.forEach(it=>{
+      const html=tpl.replace(/\{\{\s*([\w.]+)\s*\}\}/g,(m,p)=>{const k=p.split('.');let v=k[0]===as?it:d[k[0]];for(const s of k.slice(1))v=v==null?'':v[s];return esc(v==null?'':v);});
+      const w=document.createElement('div');w.innerHTML=html;
+      w.querySelectorAll('[data-ifitem]').forEach(el=>{if(!it[el.dataset.ifitem])el.remove();});
+      [...w.children].forEach(c=>{c.setAttribute('data-gen','');frag.appendChild(c);});
+    });
+    t.after(frag);
+  });
+  document.querySelectorAll('[data-if]').forEach(el=>{el.hidden=!d[el.dataset.if];});
+  document.querySelectorAll('[data-text]').forEach(el=>{el.textContent=d[el.dataset.text]||'';});
+  document.getElementById('menu').classList.toggle('ls-open',S.menuOpen);
+  document.getElementById('head').classList.toggle('ls-hide',S.scrolling);
+  const b=document.getElementById('burger');b.setAttribute('aria-expanded',S.menuOpen);b.setAttribute('aria-label',S.menuOpen?'Cerrar menú':'Abrir menú');
+}
+document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-cat]'); if(c){setState({cat:c.dataset.cat});return;}
+  if(e.target.closest('#burger')){setState({menuOpen:!S.menuOpen});return;}
+  if(e.target.closest('[data-close]'))setState({menuOpen:false});
+});
+document.getElementById('buscar').addEventListener('input',e=>setState({q:e.target.value}));
+document.getElementById('contact-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>(document.getElementById(id).value||'').trim();
+  const body='Nombre: '+v('nombre')+'\nEmail: '+v('email')+'\n\n'+v('mensaje');
+  location.href='mailto:hernanarana88@gmail.com?subject='+encodeURIComponent('Consulta desde LuSan PRO')+'&body='+encodeURIComponent(body);
+});
+let T,LY=0;document.addEventListener('scroll',()=>{const y=window.scrollY||document.documentElement.scrollTop||0;const dy=Math.abs(y-LY);LY=y;if(S.menuOpen||dy<12)return;if(!S.scrolling)setState({scrolling:true});clearTimeout(T);T=setTimeout(()=>setState({scrolling:false}),250);},{passive:true});
+render();
+
+</script>
+</body>
+</html>
