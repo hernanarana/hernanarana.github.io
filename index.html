@@ -146,11 +146,11 @@ input:focus{outline:2px solid #059669;outline-offset:1px}
 <p style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #047857">01 // servicios</p>
 <h2 style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 38px; margin: 0 0 12px; color: #111827">Servicios</h2>
 <p style="margin: 0 0 40px; font-size: 18px; color: #4b5563; max-width: 720px; line-height: 1.6">Soluciones de datos y desarrollo de punta a punta: desde la base de datos hasta el tablero que mira tu equipo.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px">
 <template data-for="services" data-as="s">
 <div class="ls-card" style="border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
 <div style="width: 48px; height: 48px; border-radius: 12px; background: #d1fae5; display: flex; align-items: center; justify-content: center">
-<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V5M16 19v-7M22 19H2"></path></svg>
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{s.icon}}"></path></svg>
 </div>
 <h3 style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 20px; margin: 0; color: #111827">{{s.t}}</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4b5563">{{s.d}}</p>
@@ -332,14 +332,14 @@ function data(){ return (function(){
       emptyMsg: (cat === 'Data Science' && !q) ? 'Estoy cursando Data Science en Coderhouse: muy pronto vas a ver acá más proyectos de datos.' : 'No hay proyectos con esa búsqueda. Probá con otra palabra.',
       onSearch: (e) => setState({ q: e.target.value }),
       services: [
-        { t: 'Análisis de datos', d: 'Limpieza, exploración y conclusiones claras a partir de tus datos.' },
-        { t: 'Dashboards en Power BI', d: 'Tableros para seguir ventas, compras, stock y operaciones de un vistazo.' },
-        { t: 'Datos y reportes con SAP', d: 'Consultas, control y seguimiento de información en SAP HANA para compras, stock y proveedores.' },
-        { t: 'Excel profesional', d: 'Planillas ordenadas, fórmulas y reportes que te ahorran horas de trabajo.' },
-        { t: 'Automatización de procesos', d: 'Scripts e integraciones que eliminan tareas manuales repetitivas.' },
-        { t: 'Páginas web', d: 'Sitios, landing pages y portfolios modernos, rápidos y adaptados al celular.' },
-        { t: 'Tiendas online', d: 'Catálogos y e-commerce con carrito, pedidos por WhatsApp y panel para cargar productos.' },
-        { t: 'Marketing digital y redes', d: 'Gestión de Instagram y Facebook: contenido, videos y campañas para atraer clientes.' }
+        { t: 'Análisis de datos', icon: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM21 21l-5-5M8 13v-2M11 13V9M14 13v-3', d: 'Limpieza, exploración y conclusiones claras a partir de tus datos.' },
+        { t: 'Dashboards en Power BI', icon: 'M3 4h18v16H3zM3 9h18M9 9v11M13 16v-3M16 16v-5M19 16v-2', d: 'Tableros para seguir ventas, compras, stock y operaciones de un vistazo.' },
+        { t: 'Datos y reportes con SAP', icon: 'M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3', d: 'Consultas, control y seguimiento de información en SAP HANA para compras, stock y proveedores.' },
+        { t: 'Excel profesional', icon: 'M3 4h18v16H3zM3 10h18M3 15h18M9 4v16', d: 'Planillas ordenadas, fórmulas y reportes que te ahorran horas de trabajo.' },
+        { t: 'Automatización de procesos', icon: 'M13 2L4 14h7l-1 8 9-12h-7z', d: 'Scripts e integraciones que eliminan tareas manuales repetitivas.' },
+        { t: 'Páginas web', icon: 'M3 5h18v14H3zM3 9h18M6 7h.01M9 7h.01M8 13l-2 2 2 2M16 13l2 2-2 2', d: 'Sitios, landing pages y portfolios modernos, rápidos y adaptados al celular.' },
+        { t: 'Tiendas online', icon: 'M3 4h2l2.4 11h11L21 7H6.2M9 20h.01M18 20h.01', d: 'Catálogos y e-commerce con carrito, pedidos por WhatsApp y panel para cargar productos.' },
+        { t: 'Marketing digital y redes', icon: 'M3 11v2a1 1 0 0 0 1 1h3l6 5V5L7 10H4a1 1 0 0 0-1 1zM17 8a5 5 0 0 1 0 8M20 5a9 9 0 0 1 0 14', d: 'Gestión de Instagram y Facebook: contenido, videos y campañas para atraer clientes.' }
       ],
       techLoop: (() => {
         const t = [
