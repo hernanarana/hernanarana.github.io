@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Arana;Hernán;;;
+FN:Hernán Arana
+ORG:LuSan PRO
+TITLE:Datos, desarrollo web y marketing digital
+TEL;TYPE=CELL:+5491135922392
+EMAIL;TYPE=INTERNET:hernanarana88@gmail.com
+URL:https://hernanarana.github.io
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/hernanarana
+NOTE:SAP HANA · Power BI · Excel · Páginas web · Tiendas online · Redes sociales
+ADR;TYPE=WORK:;;;Buenos Aires;;;Argentina
+END:VCARD
