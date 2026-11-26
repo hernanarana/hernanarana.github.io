@@ -388,9 +388,18 @@ document.addEventListener('click',e=>{
 document.getElementById('buscar').addEventListener('input',e=>setState({q:e.target.value}));
 document.getElementById('contact-form').addEventListener('submit',e=>{
   e.preventDefault();
-  const v=id=>(document.getElementById(id).value||'').trim();
-  const body='Nombre: '+v('nombre')+'\nEmail: '+v('email')+'\n\n'+v('mensaje');
-  location.href='mailto:hernanarana88@gmail.com?subject='+encodeURIComponent('Consulta desde LuSan PRO')+'&body='+encodeURIComponent(body);
+  const f=e.target, v=id=>(document.getElementById(id).value||'').trim();
+  let st=document.getElementById('form-status');
+  if(!st){st=document.createElement('p');st.id='form-status';st.setAttribute('role','status');st.style.cssText='margin:4px 0 0;font-size:15px;font-weight:600';f.appendChild(st);}
+  const show=(t,ok)=>{st.textContent=t;st.style.color=ok?'#047857':'#b91c1c';};
+  if(!v('nombre')||!v('email')||!v('mensaje')){show('Completá nombre, email y mensaje.',false);return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))){show('Revisá el email.',false);return;}
+  const btn=f.querySelector('button[type=submit]'); btn.disabled=true; show('Enviando…',true);
+  fetch('https://formspree.io/f/mwlozevg',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body:JSON.stringify({nombre:v('nombre'),email:v('email'),mensaje:v('mensaje'),_subject:'Consulta desde el portfolio de LuSan PRO'})})
+  .then(r=>{if(!r.ok)throw 0; f.reset(); show('¡Gracias! Te respondo a la brevedad.',true);})
+  .catch(()=>show('No se pudo enviar. Escribime a hernanarana88@gmail.com o por WhatsApp.',false))
+  .finally(()=>{btn.disabled=false;});
 });
 let T,LY=0;document.addEventListener('scroll',()=>{const y=window.scrollY||document.documentElement.scrollTop||0;const dy=Math.abs(y-LY);LY=y;if(S.menuOpen||dy<12)return;if(!S.scrolling)setState({scrolling:true});clearTimeout(T);T=setTimeout(()=>setState({scrolling:false}),250);},{passive:true});
 render();
