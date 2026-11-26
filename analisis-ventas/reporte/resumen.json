@@ -1,0 +1,15 @@
+{
+  "ordenes": 23693,
+  "clientes": 1716,
+  "productos": 40,
+  "crecimiento": 0.35363107178458475,
+  "error_pron": 0.04631229521513709,
+  "pron_3m": 146908030.92150158,
+  "top_margen": "Hogar",
+  "top_margen_pct": 0.29532336549079535,
+  "fieles_pct_cli": 0.30128205128205127,
+  "fieles_pct_ventas": 0.643582307501073,
+  "en_riesgo": 429,
+  "pico_dia": "Lun",
+  "pico_hora": 21
+}

@@ -1,0 +1,45 @@
+"""Arma el tablero web (index.html) del análisis de ventas."""
+import json
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[1]
+r = json.loads((ROOT/"reporte"/"resumen.json").read_text())
+m = lambda x: f"$ {x/1e6:,.0f} M".replace(",", ".")
+page = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Análisis de ventas · LuSan PRO</title>
+<meta name="description" content="Proyecto de Data Science: tendencia y pronóstico de ventas, margen por categoría, segmentos de clientes y horarios de compra.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{{box-sizing:border-box}}body{{margin:0;font-family:Inter,system-ui,sans-serif;color:#1f2937;background:#f8fafc}}
+header{{background:#064e3b;color:#fff;padding:48px 24px 40px}}.w{{max-width:1100px;margin:0 auto}}
+.k{{font-family:'JetBrains Mono',monospace;color:#6ee7b7;font-size:14px;margin:0 0 10px}}h1{{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(28px,4vw,40px);margin:0 0 12px}}
+header p{{max-width:760px;line-height:1.6;color:#d1fae5;margin:0}}.note{{margin-top:14px;font-size:14px;color:#a7f3d0}}
+.kpis{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:-24px auto 0;padding:0 24px}}
+.kpi{{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px 20px;box-shadow:0 4px 14px rgba(0,0,0,.05)}}
+.kpi b{{display:block;font-family:Montserrat,sans-serif;font-size:30px;color:#059669}}.kpi span{{font-size:14px;color:#475569}}
+section{{padding:40px 24px 0}}h2{{font-family:Montserrat,sans-serif;font-size:22px;margin:0 0 6px}}section p{{color:#475569;line-height:1.6;margin:0 0 16px;max-width:820px}}
+img{{width:100%;background:#fff;border:1px solid #e5e7eb;border-radius:14px}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:24px}}
+ul{{color:#334155;line-height:1.7}}footer{{padding:48px 24px;text-align:center;color:#64748b;font-size:14px}}footer a{{color:#059669;font-weight:600}}
+@media(max-width:520px){{.grid{{grid-template-columns:1fr}}}}
+</style></head><body>
+<header><div class="w"><p class="k">LuSan PRO // data science</p><h1>Análisis de ventas de una tienda online</h1>
+<p>Cuánto crece el negocio, qué categorías dejan plata, quiénes son los mejores clientes y cuándo compran. Lo que necesita saber cualquier tienda para decidir dónde poner el esfuerzo.</p>
+<p class="note">Datos simulados ({f"{r['ordenes']:,}".replace(',','.')} órdenes de {f"{r['clientes']:,}".replace(',','.')} clientes y {r['productos']} productos durante 2024 y 2025). No corresponden a ninguna empresa real.</p></div></header>
+<div class="kpis w">
+<div class="kpi"><b>+{r['crecimiento']:.0%}</b><span>de ventas en 2025 contra 2024</span></div>
+<div class="kpi"><b>{m(r['pron_3m'])}</b><span>pronóstico de ventas para el primer trimestre 2026 (error de prueba {r['error_pron']:.0%})</span></div>
+<div class="kpi"><b>{r['fieles_pct_ventas']:.0%}</b><span>de las ventas viene del {r['fieles_pct_cli']:.0%} de clientes fieles</span></div>
+<div class="kpi"><b>{r['en_riesgo']}</b><span>clientes en riesgo de dejar de comprar</span></div>
+</div>
+<section class="w"><h2>1. Tendencia y pronóstico</h2><p>Ventas por mes con los picos de Hot Sale, Black Friday y diciembre. El pronóstico usa tendencia, estacionalidad y los meses de campaña.</p><img src="img/ventas_mensuales.png" alt="Ventas mensuales y pronóstico"></section>
+<section class="w"><h2>2. Margen por categoría</h2><p>{r['top_margen']} es la categoría que más margen deja en pesos aunque su porcentaje es el más bajo ({r['top_margen_pct']:.0%}): vende mucho volumen. Accesorios tiene el mejor porcentaje y vale la pena empujarla.</p><img src="img/margen_categoria.png" alt="Ventas y margen por categoría"></section>
+<section class="w grid"><div><h2>3. Segmentos de clientes</h2><p>Agrupé a los clientes por cuándo compraron por última vez, cuántas veces y cuánto gastaron (RFM), con el algoritmo K-means.</p><img src="img/segmentos.png" alt="Segmentos de clientes"></div>
+<div><h2>4. Cuándo compran</h2><p>El pico es el {r['pico_dia']} a las {r['pico_hora']} h. Ese es el mejor momento para publicar y mandar promociones.</p><img src="img/dia_hora.png" alt="Órdenes por día y hora"></div></section>
+<section class="w"><h2>Qué haría con esto</h2><ul>
+<li>Un programa de beneficios para los clientes fieles: son pocos y sostienen la mayor parte de las ventas.</li>
+<li>Una campaña de reactivación por WhatsApp o mail para los {r['en_riesgo']} clientes en riesgo.</li>
+<li>Combos de Hogar con Accesorios para subir el margen por orden.</li>
+<li>Publicaciones y anuncios concentrados entre las 19 y las 22 h.</li>
+</ul></section>
+<footer>Hecho con Python (pandas, scikit-learn, matplotlib) por <a href="https://hernanarana.github.io">Hernán Arana · LuSan PRO</a> · <a href="https://github.com/hernanarana/hernanarana.github.io/tree/main/analisis-ventas">Ver código</a> · Reporte en Excel en la carpeta reporte/</footer>
+</body></html>"""
+(ROOT/"index.html").write_text(page.replace(",", ".") if False else page); print("ok")
