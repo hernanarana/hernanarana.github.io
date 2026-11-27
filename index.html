@@ -33,7 +33,11 @@ input:focus{outline:2px solid #059669;outline-offset:1px}
 .ls-in{display:inline-block;animation:lsIn .8s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion: reduce){.ls-in,.ls-fall{animation:none!important}}
 .ls-nav,.ls-btn,.ls-btn2,.ls-card,.ls-soc,.ls-chip,.ls-filt{transition:all .2s ease}
-.ls-nav:hover{color:#047857!important;background:#d1fae5;box-shadow:0 2px 8px rgba(5,150,105,.18)}
+.ls-nav{position:relative}
+.ls-nav::after{content:'';position:absolute;left:14px;right:14px;bottom:4px;height:3px;border-radius:2px;background:#f59e0b;transform:scaleX(0);transform-origin:left center;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.ls-nav:hover{color:#047857!important}
+.ls-nav:hover::after,.ls-nav:focus-visible::after{transform:scaleX(1)}
+@media (prefers-reduced-motion: reduce){.ls-nav::after{transition:none}}
 @keyframes lsMarq{to{transform:translateX(calc(-50% - 8px))}}
 .ls-track{animation:lsMarq 32s linear infinite}
 @media (prefers-reduced-motion: reduce){.ls-track{animation:none}}
